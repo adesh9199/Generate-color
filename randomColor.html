@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center; }
+    button {
+        padding: 10px 40px;
+        margin: 15px;
+        border-radius: 10px;
+        background-color: rgba(62, 162, 102, 0.725);
+      
+        transition: ease-in-out ;
+        box-shadow: black;
+    }
+    button:hover{
+        padding: 11px 41px;
+        border-radius: 12px;
+        background-color: rgba(62, 162, 102, 1);
+        opacity: 1;
+
+    }
+    .clr {
+        width: 400px;
+        height: 100px;
+        border: 1px solid black;
+        margin: auto;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <h3>Generate a random Color</h3>
+    <button>Generate</button>
+    <div class="clr">Generated Color</div>
+    
+</body>
+<script>
+    let btn = document.querySelector("button");
+    let clr = document.querySelector(".clr");
+    
+    btn.addEventListener("click", function () {
+        document.querySelector("h3").innerText = `rgb(${random()}, ${random()}, ${random()})`;
+        clr.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
+    });
+
+    let random = function () {
+        return Math.floor(Math.random() * 256);
+    }
+</script>
+</html>
